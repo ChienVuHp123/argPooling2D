@@ -1,0 +1,189 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use work.library_def.all;
+
+entity datapath is
+	port (
+                Clk, Reset: std_logic;
+                Din_I, Din_K, Din_O: in integer;
+                Adr_I, Adr_K, Adr_O: out integer;
+                Dout: out integer;
+                dout_sel: in std_logic;
+                En_i, En_j, En_m, En_n: in std_logic;
+                Ld_i, Ld_j, Ld_m, Ld_n: in std_logic;
+                Zi, Zj, Zm, Zn : out std_logic
+        );
+end datapath;
+
+architecture datapath_architecture of datapath is
+	signal Cnt_i, Cnt_j, Cnt_m, Cnt_n : integer;
+	signal Mul_D, Mul_I, Mul_K, Mul_O : integer;
+	signal res_add, res_divider, res_mux: integer;
+	signal add_rowI, add_colI, stride_rowI, stride_colI: integer;
+	constant Row_O : integer := 2;
+	constant Col_O : integer := 2;
+	constant Row_K : integer := 2;
+	constant Col_K : integer := 2;
+	constant Row_I : integer := 4;
+	constant stride : integer := 2;
+begin -- begin of architecture
+
+instance_counter1: counter
+port map(
+	Clk=>Clk,
+	Reset=>Reset,
+	Enable=>En_i,
+	Load=>Ld_i,
+	Dout=>Cnt_i
+        );
+
+instance_counter2: counter
+port map(
+	Clk=>Clk,
+	Reset=>Reset,
+	Enable=>En_j,
+	Load=>Ld_j,
+	Dout=>Cnt_j
+        );
+
+instance_counter3: counter
+port map(
+	Clk=>Clk,
+	Reset=>Reset,
+	Enable=>En_m,
+	Load=>Ld_m,
+	Dout=>Cnt_m
+        );
+
+instance_counter4: counter
+port map(
+	Clk=>Clk,
+	Reset=>Reset,
+	Enable=>En_n,
+	Load=>Ld_n,
+	Dout=>Cnt_n);
+
+
+instance_compare1: compare
+ port map(
+	Din_1 => Cnt_i,
+	Din_2 => Row_O,
+	Dout => Zi
+        );
+
+instance_compare2: compare
+ port MAP(
+	Din_1 => Cnt_j,
+	Din_2 => Col_O,
+	Dout => Zj
+        );
+
+instance_compare3: compare
+ port MAP(
+	Din_1 => Cnt_m,
+	Din_2 => Row_K,
+	Dout => Zm
+        );
+        
+instance_compare4: compare
+ port MAP(
+	Din_1 => Cnt_n,
+	Din_2 => Col_K,
+	Dout => Zn
+        );
+
+-- multiply data in * data K
+instace_mul: mul
+port map(
+	x => Din_I,
+	y => Din_K,
+	m => Mul_D
+        );
+
+instance_add: adder
+port map(
+	Din_0 => Din_O,
+	Din_1 =>  Mul_D,
+	Dout => res_add
+        );
+
+instance_mux : mux2to1
+port map(
+	din_0 => res_add,
+	dout_sel => Dout_sel,
+	dout => res_mux 
+        );
+
+
+Dout <= res_mux;
+
+
+--Calculate AdrO
+mul_adrO: mul
+port map(
+	x => Cnt_i,
+	y => Row_O,
+	m => Mul_O
+        );
+
+adder_adrO: adder
+port map(
+	Din_0 => Mul_O,
+	Din_1 => Cnt_j,
+	Dout => Adr_O
+        );
+
+--Calculate AdrK
+mul_adrK: mul
+port map(
+	x => Cnt_m,
+	y => Row_K,
+	m => Mul_K
+        );
+
+adder_adrK: adder
+port map(
+	Din_0 => Mul_K,
+	Din_1 => Cnt_n,
+	Dout => Adr_K
+        );
+--Calculate AdrI
+mul_stride_rowI: mul
+port map(
+	x => Cnt_I,
+	y => stride,
+	m => stride_rowI
+	);
+adder_rowI: adder
+port map(
+	Din_0 => stride_rowI,
+	Din_1 => Cnt_M,
+	Dout => add_rowI
+        );
+mul_stride_colI: mul
+port map(
+	x => Cnt_j,
+	y => stride,
+	m => stride_colI
+	);
+adder_colI: adder
+port map(
+	Din_0 => stride_colI,
+	Din_1 => Cnt_N,
+	Dout => add_colI
+        );
+
+mul_adrI: mul
+port map(
+	x => add_rowI,
+	y => Row_I,
+	m => Mul_I
+        );
+
+adder_adrI: adder
+port map(
+	Din_0 => Mul_I,
+	Din_1 => add_colI,
+	Dout => Adr_I);
+end datapath_architecture;

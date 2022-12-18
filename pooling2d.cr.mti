@@ -1,0 +1,124 @@
+{D:/thiet ke mach tich hop so/pooling2D/compare.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/compare.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity compare
+-- Compiling architecture architecture_of_compare of compare
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/datapath.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/datapath.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package library_def
+-- Compiling entity datapath
+-- Compiling architecture datapath_architecture of datapath
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/pooling.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/pooling.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package library_def
+-- Compiling entity pooling
+-- Compiling architecture pooling_architecture of pooling
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/counter.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/counter.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity counter
+-- Compiling architecture counter_architecture of counter
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/mux2to1.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/mux2to1.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux2to1
+-- Compiling architecture mux2to1_architecture of mux2to1
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/data_I.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/data_I.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity data_I
+-- Compiling architecture data_I_architecture of data_I
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/data_K.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/data_K.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity data_K
+-- Compiling architecture data_K_architecture of data_K
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/mul.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/mul.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mul
+-- Compiling architecture mul_architect of mul
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/adder.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/adder.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity adder
+-- Compiling architecture architecture_of_adder of adder
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/data_O.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/data_O.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity data_O
+-- Compiling architecture data_O_architecture of data_O
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/controller.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/controller.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity controller
+-- Compiling architecture controller_architecture of controller
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/pooling_tb.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/pooling_tb.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package library_def
+-- Compiling entity pooling_tb
+-- Compiling architecture architecture_testbench of pooling_tb
+
+} {} {}} {D:/thiet ke mach tich hop so/pooling2D/library.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/thiet ke mach tich hop so/pooling2D/library.vhd}
+Model Technology ModelSim SE-64 vcom 10.5 Compiler 2016.02 Feb 13 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package library_def
+
+} {} {}}
